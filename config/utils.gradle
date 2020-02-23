@@ -1,0 +1,29 @@
+/***
+ * Utils functions
+ */
+
+
+
+
+ext.formatAppName = { variant ->
+	variant.outputs.each { output ->
+		def project = "MuseumApp"
+		def SEPARATOR = "_"
+		def flavor = variant.productFlavors[0].name
+		def buildType = variant.variantData.variantConfiguration.buildType.name
+		def version = variant.versionName
+		def date = new Date()
+		def formattedDate = "date_" + date.format('dd.MM.yy__HH_mm')
+
+		def newApkName =
+			project + SEPARATOR +
+				flavor + SEPARATOR +
+				buildType + SEPARATOR +
+				version + SEPARATOR +
+				formattedDate + ".apk"
+
+		output.outputFileName = newApkName
+	}
+}
+
+

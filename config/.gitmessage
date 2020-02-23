@@ -1,0 +1,32 @@
+[SW-] 
+
+[SW-] #time  
+
+ 
+
+# Commit message should look like this:
+#
+# [ISSUE KEY] <COMMIT MESSAGE> 
+#
+# [ISSUE KEY] #time <TIME> #<STATUS> #comment COMMENT
+# [ISSUE KEY] <command>
+#
+# eg.
+#    SW-160 Add login Activity
+#
+#    SW-160 #time 2.5h #READY-FOR-BUILD
+#
+#
+# Help:
+#
+#  MANDATORY: 
+#       -ISSUE KEY: Jira issue key (eg. SW-151)
+#       -COMMIT MESSAGE: Commit description
+#
+#  OPTIONAL:
+#       -TIME:  <value>w <value>d <value>h <value>m <comment_string> (eg. 1w 2d 2h)
+#       -STATUS: Represents status from Jira project (eg. READY-FOR-BUILD, DONE)
+#       -COMMENT: Add comment to Jira issue
+#       <command> :Check link below for more commands
+#
+# More details about Smart Commits https://confluence.atlassian.com/bitbucketserver/using-smart-commits-in-bitbucket-server-802599018.html

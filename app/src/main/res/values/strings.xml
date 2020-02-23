@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Revolut Converter</string>
+
+    <string name="login_license_key">License key</string>
+    <string name="fragment_license_button_activate">Activate</string>
+</resources>

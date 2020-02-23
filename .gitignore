@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+# Idea :
+.idea/
+!.idea/codeStyles
+!.idea/misc.xml
+!.idea/kotlinScripting.xml
+!.idea/encodings.xml
+
+
+# Secret files
+config/signing/releaseKeystore.properties
+config/signing/releasekeystore.properties
+
+*jks
+*.keystore
