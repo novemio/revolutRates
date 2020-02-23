@@ -2,6 +2,10 @@ package com.novemio.android.revolut.data.network.retrofit
 
 import com.novemio.android.revolut.data.local.authorization.AuthorizationCache
 import com.novemio.android.revolut.data.network.NetworkEventBus
+import com.novemio.android.revolut.data.network.api.currency.model.CurrencyRateRaw
+import com.novemio.android.revolut.data.network.api.currency.model.CurrencyRateRawAdapter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -18,10 +22,10 @@ class RetrofitModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
         return Retrofit.Builder()
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
             .baseUrl(NetworkConstants.HOST_URL)
             .build()
@@ -35,5 +39,14 @@ class RetrofitModule {
     ): OkHttpClient {
         return OkHttpBuilderFactory(authorizationCache, networkEventBus).get().build()
     }
+
+    @Singleton
+    @Provides
+    fun provideMoshi(): Moshi {
+        return Moshi.Builder()
+            .add(CurrencyRateRawAdapter())
+            .build()
+    }
+
 
 }

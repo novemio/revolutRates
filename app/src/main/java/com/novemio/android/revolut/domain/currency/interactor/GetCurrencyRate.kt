@@ -3,6 +3,7 @@ package com.novemio.android.revolut.domain.currency.interactor
 import com.novem.lib.core.domain.BaseInteractorSingle
 import com.novem.lib.core.utils.validate
 import com.novemio.android.revolut.domain.currency.CurrencyRepository
+import com.novemio.android.revolut.domain.currency.model.CurrencyRates
 import javax.inject.Inject
 
 /**
@@ -11,7 +12,7 @@ import javax.inject.Inject
 class GetCurrencyRate @Inject constructor(
     private val currencyApi: CurrencyRepository
 
-) : BaseInteractorSingle<String, Any>() {
+) : BaseInteractorSingle<String, CurrencyRates>() {
 
     override fun buildExecute(params: String) = currencyApi.getCurrencyRate(params).validate()
 

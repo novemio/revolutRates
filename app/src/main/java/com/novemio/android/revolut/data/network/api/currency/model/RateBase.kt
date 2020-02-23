@@ -1,10 +1,13 @@
 package com.novemio.android.revolut.data.network.api.currency.model
 
-import com.squareup.moshi.Json
+import com.novem.lib.core.utils.mapTo
+import com.novemio.android.revolut.domain.currency.model.CurrencyRates
+import com.novemio.android.revolut.domain.currency.model.Rate
+import com.squareup.moshi.*
+import org.json.JSONObject
 
 data class CurrencyRateRaw(
-    @field:Json(name = "base") val baseCurrency: String?,
-    @field:Json(name = "date") val date: String?,
+    @field:Json(name = "baseCurrency") val baseCurrency: String,
     @field:Json(name = "rates") var ratesList: List<RateRaw>
 )
 
@@ -12,5 +15,11 @@ data class RateRaw(
     val currency: String,
     var rate: Double
 )
+
+
+fun CurrencyRateRaw.toDomain() = CurrencyRates(baseCurrency, ratesList.mapTo { it.toDomain() })
+
+fun RateRaw.toDomain() = Rate(currency, rate)
+
 
 

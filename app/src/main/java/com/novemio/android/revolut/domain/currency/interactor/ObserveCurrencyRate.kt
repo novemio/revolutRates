@@ -5,6 +5,7 @@ import com.novem.lib.core.domain.BaseInteractorObservable
 import com.novem.lib.core.utils.result.SealedResult
 import com.novem.lib.core.utils.validate
 import com.novemio.android.revolut.domain.currency.CurrencyRepository
+import com.novemio.android.revolut.domain.currency.model.CurrencyRates
 import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -18,13 +19,13 @@ private val TAG by lazy {ObserveCurrencyRate ::class.java.simpleName }
 class ObserveCurrencyRate @Inject constructor(
     private val currencyApi: CurrencyRepository
 
-) : BaseInteractorObservable<ObserveCurrencyRate.Params, Any>() {
+) : BaseInteractorObservable<ObserveCurrencyRate.Params, CurrencyRates>() {
 
     @Volatile
     private lateinit var baseCurrency: String
     private val LOCK = Any()
 
-    override fun buildExecute(params: Params): Observable<SealedResult<Any>> {
+    override fun buildExecute(params: Params): Observable<SealedResult<CurrencyRates>> {
         clearDisposables()
         baseCurrency = params.currency
         return Observable.interval(0, params.period, TimeUnit.SECONDS)

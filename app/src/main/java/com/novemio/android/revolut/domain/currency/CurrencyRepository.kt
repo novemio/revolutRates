@@ -1,5 +1,6 @@
 package com.novemio.android.revolut.domain.currency
 
+import com.novemio.android.revolut.domain.currency.model.CurrencyRates
 import io.reactivex.Single
 
 /**
@@ -8,5 +9,5 @@ import io.reactivex.Single
 interface CurrencyRepository {
 
 
-    fun getCurrencyRate(currency:String): Single<Any>
+    fun getCurrencyRate(currency:String): Single<CurrencyRates>
 }
