@@ -11,15 +11,17 @@ import javax.inject.Inject
 /**
  * Created by novemio on 2/16/20.
  */
+
+private val TAG by lazy { CurrencyRepositoryImpl::class.java.simpleName }
+
 class CurrencyRepositoryImpl @Inject constructor(
-    private val currencyApi: CurrencyApi
+	private val currencyApi: CurrencyApi
 ) : CurrencyRepository {
-
-
-    override fun getCurrencyRate(currency: String): Single<CurrencyRates> {
-        return currencyApi.getCurrencyRate(currency)
-            .map { it.toDomain() }
-            .subscribeOn(Schedulers.io())
-    }
-
+	
+	override fun getCurrencyRate(currency: String): Single<CurrencyRates> {
+		return currencyApi.getCurrencyRate(currency)
+			.map { it.toDomain() }
+			.subscribeOn(Schedulers.io())
+	}
+	
 }

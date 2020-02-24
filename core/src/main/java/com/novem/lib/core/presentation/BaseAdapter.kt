@@ -8,39 +8,37 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
-	private var data: MutableList<T> = mutableListOf()
+	protected var adapterData: MutableList<T> = mutableListOf()
 
-	var onItemClick: ((T) -> Unit)? = null
+	open var onItemClick: ((T) -> Unit)? = null
 
 	override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) {
-		val itemData = data[position]
+		val itemData = adapterData[position]
 		holder.bind(itemData)
-		onItemClick?.let { click ->
-			holder.itemView.setOnClickListener {
-				click.invoke(itemData)
-			}
-		}
+
 	}
 
-	override fun getItemCount(): Int = data.size
 
-	fun setData(dataList: List<T>) {
-		notifyChanged(data, dataList).also {
-			data.clear()
-			data.addAll(dataList)
+
+	override fun getItemCount(): Int = adapterData.size
+
+	open fun setData(dataList: List<T>) {
+		notifyChanged(adapterData, dataList).also {
 			it.dispatchUpdatesTo(this)
+			adapterData.clear()
+			adapterData.addAll(dataList)
 		}
 
 	}
 
 
-	fun getData(): List<T> = data
+	fun getData(): List<T> = adapterData
 
-	fun getItemOnPosition(position: Int): T = data[position]
+	fun getItemOnPosition(position: Int): T = adapterData[position]
 
-	fun getItemsFromTo(from: Int, to: Int): List<T> = data.subList(from, to)
+	fun getItemsFromTo(from: Int, to: Int): List<T> = adapterData.subList(from, to)
 
-	private fun notifyChanged(old: List<T>, new: List<T>) = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
+	open fun notifyChanged(old: List<T>, new: List<T>) = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
 
 		override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
 			old[oldItemPosition].hashCode() == new[newItemPosition].hashCode()

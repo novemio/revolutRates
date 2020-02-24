@@ -21,16 +21,14 @@ class ObserveCurrencyRate @Inject constructor(
 
 ) : BaseInteractorObservable<ObserveCurrencyRate.Params, CurrencyRates>() {
 
-    @Volatile
-    private lateinit var baseCurrency: String
+
     private val LOCK = Any()
 
     override fun buildExecute(params: Params): Observable<SealedResult<CurrencyRates>> {
         clearDisposables()
-        baseCurrency = params.currency
         return Observable.interval(0, params.period, TimeUnit.SECONDS)
             .flatMapSingle {
-                currencyApi.getCurrencyRate(baseCurrency)
+                currencyApi.getCurrencyRate( params.currency)
             }
             .validate()
     }
