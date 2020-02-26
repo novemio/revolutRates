@@ -1,17 +1,19 @@
 package com.novemio.android.revolut.presentation.screens.rates
 
-import android.util.Log
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
-import com.github.ajalt.timberkt.Timber
 import com.novem.lib.core.presentation.CoreViewModel
 import com.novem.lib.core.presentation.viewmodel.ObservableScreenState
-import com.novem.lib.core.presentation.viewmodel.SimpleState
+import com.novem.lib.core.presentation.viewmodel.ScreenState
+import com.novemio.android.revolut.data.network.ConnectionManager
 import com.novemio.android.revolut.domain.currency.interactor.ObserveCurrencyRate
 import com.novemio.android.revolut.domain.currency.model.RATE_NOTHING
 import com.novemio.android.revolut.domain.currency.model.Rate
+import com.novemio.android.revolut.presentation.base.widget.NoConnectionView
+import io.reactivex.disposables.Disposable
+import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 
@@ -20,47 +22,57 @@ const val PERIOD = 1L
 private val TAG by lazy { RatesViewModel::class.java.simpleName }
 
 class RatesViewModel @Inject constructor(
-    private val observeCurrencyRate: ObserveCurrencyRate
+    private val observeCurrencyRate: ObserveCurrencyRate,
+    connectionManager: ConnectionManager
 
-) : CoreViewModel(),LifecycleObserver {
+) : CoreViewModel(), LifecycleObserver {
 
+    var connectionDisposable: Disposable = connectionManager.observable()
+        .skip(1)
+        .subscribeBy {
+            if (it.not()) {
+                screenState.updateValue(RatesState.NoConnection)
+            } else {
+                observeCurrencyRate(baseRate.currency, PERIOD)
+            }
+        }
 
     var baseRate: Rate = Rate("EUR", RATE_NOTHING)
-    val screenState = ObservableScreenState<SimpleState<String>>(true)
-
-    val data = MutableLiveData<List<Rate>>()
-
-
+    val screenState = ObservableScreenState<RatesState>(true)
 
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onStart() {
         observeCurrencyRate(baseRate.currency, PERIOD)
     }
+
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onStop(){
+    fun onStop() {
         observeCurrencyRate.clearDisposables()
     }
 
     private fun observeCurrencyRate(currency: String, period: Long = 1) {
-        Log.d(TAG, "observeCurrencyRate: $currency")
         observeCurrencyRate.executeBy(ObserveCurrencyRate.Params(currency, period)) {
-
-            it.onSuccess {
-                val list = mutableListOf<Rate>()
-                list.add(baseRate)
-                list.addAll(it.rates)
-                data.postValue(list)
-            }
-
-            Timber.d { it.toString() }
+            screenState.updateValue(it.toRateState(baseRate))
         }
     }
 
     fun changeBaseCurrency(rate: Rate, value: Double) {
-        Log.d("ConverterViewModel", "changeBaseCurrency: $rate")
         baseRate = rate.apply { rate.value = value }
         observeCurrencyRate(rate.currency, PERIOD)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        connectionDisposable.dispose()
+    }
+
+}
+
+@BindingAdapter("ratesState")
+fun NoConnectionView.bindRateState(screnStateRates: ObservableScreenState<RatesState>) {
+    screnStateRates.value?.let {
+        show(it is ScreenState.Render && it.renderState is RatesState.NoConnection)
     }
 
 }

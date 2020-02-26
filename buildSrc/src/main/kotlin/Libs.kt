@@ -7,381 +7,340 @@ import kotlin.String
  *   `$ ./gradlew buildSrcVersions`
  */
 object Libs {
-    /**
-     * https://developer.android.com/jetpack/androidx
-     */
-    const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val core_testing: String = "androidx.arch.core:core-testing:" + Versions.core_testing
-
-    /**
-     * http://developer.android.com/tools/extras/support-library.html
-     */
-    const val cardview: String = "androidx.cardview:cardview:" + Versions.cardview
-
-    /**
-     * http://tools.android.com
-     */
-    const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
-            Versions.constraintlayout
-
-    /**
-     * http://developer.android.com/tools/extras/support-library.html
-     */
-    const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
-
-    const val databinding_adapters: String = "androidx.databinding:databinding-adapters:" +
-            Versions.androidx_databinding
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val databinding_common: String = "androidx.databinding:databinding-common:" +
-            Versions.androidx_databinding
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val databinding_compiler: String = "androidx.databinding:databinding-compiler:" +
-            Versions.androidx_databinding
-
-    const val databinding_runtime: String = "androidx.databinding:databinding-runtime:" +
-            Versions.androidx_databinding
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val lifecycle_extensions: String = "androidx.lifecycle:lifecycle-extensions:" +
-            Versions.lifecycle_extensions
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val navigation_fragment_ktx: String = "androidx.navigation:navigation-fragment-ktx:" +
-            Versions.navigation_fragment_ktx
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val navigation_runtime_ktx: String = "androidx.navigation:navigation-runtime-ktx:" +
-            Versions.navigation_runtime_ktx
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val navigation_safe_args_gradle_plugin: String =
-            "androidx.navigation:navigation-safe-args-gradle-plugin:" +
-            Versions.navigation_safe_args_gradle_plugin
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val navigation_ui_ktx: String = "androidx.navigation:navigation-ui-ktx:" +
-            Versions.navigation_ui_ktx
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val paging_runtime: String = "androidx.paging:paging-runtime:" + Versions.paging_runtime
-
-    /**
-     * http://developer.android.com/tools/extras/support-library.html
-     */
-    const val recyclerview: String = "androidx.recyclerview:recyclerview:" + Versions.recyclerview
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val room_compiler: String = "androidx.room:room-compiler:" + Versions.androidx_room
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val room_runtime: String = "androidx.room:room-runtime:" + Versions.androidx_room
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val room_rxjava2: String = "androidx.room:room-rxjava2:" + Versions.androidx_room
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val room_testing: String = "androidx.room:room-testing:" + Versions.androidx_room
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val espresso_core: String = "androidx.test.espresso:espresso-core:" +
-            Versions.espresso_core
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val androidx_test_core: String = "androidx.test:core:" + Versions.androidx_test
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:" +
-            Versions.com_android_tools_build_gradle
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
-
-    const val crashlytics: String = "com.crashlytics.sdk.android:crashlytics:" +
-            Versions.crashlytics
-
-    /**
-     * https://github.com/facebook/stetho
-     */
-    const val stetho: String = "com.facebook.stetho:stetho:" + Versions.stetho
-
-    /**
-     * https://github.com/ajalt/timberkt
-     */
-    const val timberkt: String = "com.github.ajalt:timberkt:" + Versions.timberkt
-
-    /**
-     * https://github.com/bumptech/glide
-     */
-    const val com_github_bumptech_glide_compiler: String = "com.github.bumptech.glide:compiler:" +
-            Versions.com_github_bumptech_glide
-
-    /**
-     * https://github.com/bumptech/glide
-     */
-    const val glide: String = "com.github.bumptech.glide:glide:" +
-            Versions.com_github_bumptech_glide
-
-    const val play_services_location: String = "com.google.android.gms:play-services-location:" +
-            Versions.com_google_android_gms
-
-    const val play_services_maps: String = "com.google.android.gms:play-services-maps:" +
-            Versions.com_google_android_gms
-
-    /**
-     * https://github.com/google/auto/tree/master/value
-     */
-    const val auto_value_annotations: String = "com.google.auto.value:auto-value-annotations:" +
-            Versions.auto_value_annotations
-
-    /**
-     * https://github.com/google/auto/tree/master/value
-     */
-    const val auto_value: String = "com.google.auto.value:auto-value:" + Versions.auto_value
-
-    /**
-     * https://github.com/google/dagger
-     */
-    const val dagger_android_processor: String = "com.google.dagger:dagger-android-processor:" +
-            Versions.com_google_dagger
-
-    /**
-     * https://github.com/google/dagger
-     */
-    const val dagger_android_support: String = "com.google.dagger:dagger-android-support:" +
-            Versions.com_google_dagger
-
-    /**
-     * https://github.com/google/dagger
-     */
-    const val dagger_compiler: String = "com.google.dagger:dagger-compiler:" +
-            Versions.com_google_dagger
-
-    /**
-     * https://github.com/google/dagger
-     */
-    const val dagger: String = "com.google.dagger:dagger:" + Versions.com_google_dagger
-
-    const val google_services: String = "com.google.gms:google-services:" + Versions.google_services
-
-    const val zxing_android_embedded: String = "com.journeyapps:zxing-android-embedded:" +
-            Versions.zxing_android_embedded
-
-    /**
-     * https://github.com/karumi/Dexter
-     */
-    const val dexter: String = "com.karumi:dexter:" + Versions.dexter
-
-    const val com_novemio_checknamingconvention_gradle_plugin: String =
-            "com.novemio.checknamingconvention:com.novemio.checknamingconvention.gradle.plugin:" +
-            Versions.com_novemio_checknamingconvention_gradle_plugin
-
-    const val datasourceadapter: String = "com.novemio.datasourceadapter:datasourceadapter:" +
-            Versions.datasourceadapter
-
-    /**
-     * https://github.com/one-signal/OneSignal-Android-SDK
-     */
-    const val onesignal: String = "com.onesignal:OneSignal:" + Versions.onesignal
-
-    /**
-     * https://github.com/square/moshi
-     */
-    const val moshi_kotlin_codegen: String = "com.squareup.moshi:moshi-kotlin-codegen:" +
-            Versions.com_squareup_moshi
-
-    /**
-     * https://github.com/square/moshi
-     */
-    const val moshi_kotlin: String = "com.squareup.moshi:moshi-kotlin:" +
-            Versions.com_squareup_moshi
-
-    /**
-     * https://github.com/square/okhttp
-     */
-    const val logging_interceptor: String = "com.squareup.okhttp3:logging-interceptor:" +
-            Versions.com_squareup_okhttp3
-
-    /**
-     * https://github.com/square/okhttp
-     */
-    const val okhttp: String = "com.squareup.okhttp3:okhttp:" + Versions.com_squareup_okhttp3
-
-    /**
-     * https://github.com/square/retrofit/
-     */
-    const val adapter_rxjava2: String = "com.squareup.retrofit2:adapter-rxjava2:" +
-            Versions.com_squareup_retrofit2
-
-    /**
-     * https://github.com/square/retrofit/
-     */
-    const val converter_moshi: String = "com.squareup.retrofit2:converter-moshi:" +
-            Versions.com_squareup_retrofit2
-
-    /**
-     * https://github.com/square/retrofit/
-     */
-    const val retrofit: String = "com.squareup.retrofit2:retrofit:" +
-            Versions.com_squareup_retrofit2
-
-    const val de_fayard_buildsrcversions_gradle_plugin: String =
-            "de.fayard.buildSrcVersions:de.fayard.buildSrcVersions.gradle.plugin:" +
-            Versions.de_fayard_buildsrcversions_gradle_plugin
-
-    /**
-     * https://github.com/mannodermaus/android-junit5
-     */
-    const val android_junit5: String = "de.mannodermaus.gradle.plugins:android-junit5:" +
-            Versions.android_junit5
-
-    /**
-     * https://github.com/mannodermaus/android-junit5
-     */
-    const val android_test_core: String = "de.mannodermaus.junit5:android-test-core:" +
-            Versions.de_mannodermaus_junit5
-
-    /**
-     * https://github.com/mannodermaus/android-junit5
-     */
-    const val android_test_runner: String = "de.mannodermaus.junit5:android-test-runner:" +
-            Versions.de_mannodermaus_junit5
-
-
-    const val io_fabric_tools_gradle: String = "io.fabric.tools:gradle:" +
-            Versions.io_fabric_tools_gradle
-
-    const val detekt_cli: String = "io.gitlab.arturbosch.detekt:detekt-cli:" +
-            Versions.io_gitlab_arturbosch_detekt
-
-    const val io_gitlab_arturbosch_detekt_gradle_plugin: String =
-            "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:" +
-            Versions.io_gitlab_arturbosch_detekt
-
-    /**
-     * http://mockk.io
-     */
-    const val mockk_android: String = "io.mockk:mockk-android:" + Versions.io_mockk
-
-    /**
-     * http://mockk.io
-     */
-    const val mockk: String = "io.mockk:mockk:" + Versions.io_mockk
-
-    /**
-     * https://github.com/ReactiveX/RxAndroid
-     */
-    const val rxandroid: String = "io.reactivex.rxjava2:rxandroid:" + Versions.rxandroid
-
-    /**
-     * https://github.com/ReactiveX/RxJava
-     */
-    const val rxjava: String = "io.reactivex.rxjava2:rxjava:" + Versions.rxjava
-
-    /**
-     * https://github.com/ReactiveX/RxKotlin
-     */
-    const val rxkotlin: String = "io.reactivex.rxjava2:rxkotlin:" + Versions.rxkotlin
-
-    /**
-     * http://junit.org
-     */
-    const val junit: String = "junit:junit:" + Versions.junit
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_android_extensions_runtime: String =
-            "org.jetbrains.kotlin:kotlin-android-extensions-runtime:" +
-            Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_android_extensions: String =
-            "org.jetbrains.kotlin:kotlin-android-extensions:" + Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_annotation_processing_gradle: String =
-            "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:" +
-            Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:" +
-            Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" +
-            Versions.org_jetbrains_kotlin
-
-    /**
-     * https://junit.org/junit5/
-     */
-    const val junit_jupiter_api: String = "org.junit.jupiter:junit-jupiter-api:" +
-            Versions.org_junit_jupiter
-
-    /**
-     * https://junit.org/junit5/
-     */
-    const val junit_jupiter_engine: String = "org.junit.jupiter:junit-jupiter-engine:" +
-            Versions.org_junit_jupiter
-
-    /**
-     * https://junit.org/junit5/
-     */
-    const val junit_jupiter_params: String = "org.junit.jupiter:junit-jupiter-params:" +
-            Versions.org_junit_jupiter
+  /**
+   * https://developer.android.com/jetpack/androidx
+   */
+  const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val core_testing: String = "androidx.arch.core:core-testing:" + Versions.core_testing
+
+  /**
+   * http://developer.android.com/tools/extras/support-library.html
+   */
+  const val cardview: String = "androidx.cardview:cardview:" + Versions.cardview
+
+  /**
+   * http://tools.android.com
+   */
+  const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
+      Versions.constraintlayout
+
+  /**
+   * https://developer.android.com/jetpack/androidx
+   */
+  const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
+
+  const val databinding_adapters: String = "androidx.databinding:databinding-adapters:" +
+      Versions.androidx_databinding
+
+  /**
+   * https://developer.android.com/studio
+   */
+  const val databinding_common: String = "androidx.databinding:databinding-common:" +
+      Versions.androidx_databinding
+
+  /**
+   * https://developer.android.com/studio
+   */
+  const val databinding_compiler: String = "androidx.databinding:databinding-compiler:" +
+      Versions.androidx_databinding
+
+  const val databinding_runtime: String = "androidx.databinding:databinding-runtime:" +
+      Versions.androidx_databinding
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val lifecycle_extensions: String = "androidx.lifecycle:lifecycle-extensions:" +
+      Versions.lifecycle_extensions
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val navigation_fragment_ktx: String = "androidx.navigation:navigation-fragment-ktx:" +
+      Versions.androidx_navigation
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val navigation_runtime_ktx: String = "androidx.navigation:navigation-runtime-ktx:" +
+      Versions.androidx_navigation
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val navigation_safe_args_gradle_plugin: String =
+      "androidx.navigation:navigation-safe-args-gradle-plugin:" + Versions.androidx_navigation
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val navigation_ui_ktx: String = "androidx.navigation:navigation-ui-ktx:" +
+      Versions.androidx_navigation
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val paging_runtime: String = "androidx.paging:paging-runtime:" + Versions.paging_runtime
+
+  /**
+   * https://developer.android.com/jetpack/androidx
+   */
+  const val recyclerview: String = "androidx.recyclerview:recyclerview:" + Versions.recyclerview
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val room_compiler: String = "androidx.room:room-compiler:" + Versions.androidx_room
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val room_runtime: String = "androidx.room:room-runtime:" + Versions.androidx_room
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val room_rxjava2: String = "androidx.room:room-rxjava2:" + Versions.androidx_room
+
+  /**
+   * https://developer.android.com/topic/libraries/architecture/index.html
+   */
+  const val room_testing: String = "androidx.room:room-testing:" + Versions.androidx_room
+
+  /**
+   * https://developer.android.com/testing
+   */
+  const val espresso_core: String = "androidx.test.espresso:espresso-core:" + Versions.espresso_core
+
+  /**
+   * https://developer.android.com/testing
+   */
+  const val androidx_test_core: String = "androidx.test:core:" + Versions.androidx_test
+
+  /**
+   * https://developer.android.com/testing
+   */
+  const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test
+
+  /**
+   * https://github.com/airbnb/lottie-android
+   */
+  const val lottie: String = "com.airbnb.android:lottie:" + Versions.lottie
+
+  /**
+   * https://developer.android.com/studio
+   */
+  const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
+
+  /**
+   * https://developer.android.com/studio
+   */
+  const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:" +
+      Versions.com_android_tools_build_gradle
+
+  /**
+   * https://developer.android.com/studio
+   */
+  const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
+
+  /**
+   * https://github.com/facebook/stetho
+   */
+  const val stetho: String = "com.facebook.stetho:stetho:" + Versions.stetho
+
+  /**
+   * https://github.com/ajalt/timberkt
+   */
+  const val timberkt: String = "com.github.ajalt:timberkt:" + Versions.timberkt
+
+  /**
+   * https://github.com/bumptech/glide
+   */
+  const val com_github_bumptech_glide_compiler: String = "com.github.bumptech.glide:compiler:" +
+      Versions.com_github_bumptech_glide
+
+  /**
+   * https://github.com/bumptech/glide
+   */
+  const val glide: String = "com.github.bumptech.glide:glide:" + Versions.com_github_bumptech_glide
+
+  /**
+   * https://github.com/google/auto/tree/master/value
+   */
+  const val auto_value_annotations: String = "com.google.auto.value:auto-value-annotations:" +
+      Versions.com_google_auto_value
+
+  /**
+   * https://github.com/google/auto/tree/master/value
+   */
+  const val auto_value: String = "com.google.auto.value:auto-value:" +
+      Versions.com_google_auto_value
+
+  /**
+   * https://github.com/google/dagger
+   */
+  const val dagger_android_processor: String = "com.google.dagger:dagger-android-processor:" +
+      Versions.com_google_dagger
+
+  /**
+   * https://github.com/google/dagger
+   */
+  const val dagger_android_support: String = "com.google.dagger:dagger-android-support:" +
+      Versions.com_google_dagger
+
+  /**
+   * https://github.com/google/dagger
+   */
+  const val dagger_compiler: String = "com.google.dagger:dagger-compiler:" +
+      Versions.com_google_dagger
+
+  /**
+   * https://github.com/google/dagger
+   */
+  const val dagger: String = "com.google.dagger:dagger:" + Versions.com_google_dagger
+
+  const val google_services: String = "com.google.gms:google-services:" + Versions.google_services
+
+  /**
+   * https://github.com/square/moshi
+   */
+  const val moshi_kotlin_codegen: String = "com.squareup.moshi:moshi-kotlin-codegen:" +
+      Versions.com_squareup_moshi
+
+  /**
+   * https://github.com/square/moshi
+   */
+  const val moshi_kotlin: String = "com.squareup.moshi:moshi-kotlin:" + Versions.com_squareup_moshi
+
+  /**
+   * https://square.github.io/okhttp/
+   */
+  const val logging_interceptor: String = "com.squareup.okhttp3:logging-interceptor:" +
+      Versions.com_squareup_okhttp3
+
+  /**
+   * https://square.github.io/okhttp/
+   */
+  const val okhttp: String = "com.squareup.okhttp3:okhttp:" + Versions.com_squareup_okhttp3
+
+  /**
+   * https://github.com/square/retrofit/
+   */
+  const val adapter_rxjava2: String = "com.squareup.retrofit2:adapter-rxjava2:" +
+      Versions.com_squareup_retrofit2
+
+  /**
+   * https://github.com/square/retrofit/
+   */
+  const val converter_moshi: String = "com.squareup.retrofit2:converter-moshi:" +
+      Versions.com_squareup_retrofit2
+
+  /**
+   * https://github.com/square/retrofit/
+   */
+  const val retrofit: String = "com.squareup.retrofit2:retrofit:" + Versions.com_squareup_retrofit2
+
+  const val de_fayard_buildsrcversions_gradle_plugin: String =
+      "de.fayard.buildSrcVersions:de.fayard.buildSrcVersions.gradle.plugin:" +
+      Versions.de_fayard_buildsrcversions_gradle_plugin
+
+  /**
+   * https://github.com/mannodermaus/android-junit5
+   */
+  const val android_junit5: String = "de.mannodermaus.gradle.plugins:android-junit5:" +
+      Versions.android_junit5
+
+  /**
+   * https://github.com/mannodermaus/android-junit5
+   */
+  const val android_test_core: String = "de.mannodermaus.junit5:android-test-core:" +
+      Versions.de_mannodermaus_junit5
+
+  /**
+   * https://github.com/mannodermaus/android-junit5
+   */
+  const val android_test_runner: String = "de.mannodermaus.junit5:android-test-runner:" +
+      Versions.de_mannodermaus_junit5
+
+  /**
+   * http://mockk.io
+   */
+  const val mockk_android: String = "io.mockk:mockk-android:" + Versions.io_mockk
+
+  /**
+   * http://mockk.io
+   */
+  const val mockk: String = "io.mockk:mockk:" + Versions.io_mockk
+
+  /**
+   * https://github.com/ReactiveX/RxAndroid
+   */
+  const val rxandroid: String = "io.reactivex.rxjava2:rxandroid:" + Versions.rxandroid
+
+  /**
+   * https://github.com/ReactiveX/RxJava
+   */
+  const val rxjava: String = "io.reactivex.rxjava2:rxjava:" + Versions.rxjava
+
+  /**
+   * https://github.com/ReactiveX/RxKotlin
+   */
+  const val rxkotlin: String = "io.reactivex.rxjava2:rxkotlin:" + Versions.rxkotlin
+
+  /**
+   * http://junit.org
+   */
+  const val junit: String = "junit:junit:" + Versions.junit
+
+  /**
+   * https://kotlinlang.org/
+   */
+  const val kotlin_android_extensions_runtime: String =
+      "org.jetbrains.kotlin:kotlin-android-extensions-runtime:" + Versions.org_jetbrains_kotlin
+
+  /**
+   * https://kotlinlang.org/
+   */
+  const val kotlin_android_extensions: String = "org.jetbrains.kotlin:kotlin-android-extensions:" +
+      Versions.org_jetbrains_kotlin
+
+  /**
+   * https://kotlinlang.org/
+   */
+  const val kotlin_annotation_processing_gradle: String =
+      "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:" + Versions.org_jetbrains_kotlin
+
+  /**
+   * https://kotlinlang.org/
+   */
+  const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:" +
+      Versions.org_jetbrains_kotlin
+
+  /**
+   * https://kotlinlang.org/
+   */
+  const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" +
+      Versions.org_jetbrains_kotlin
+
+  /**
+   * https://junit.org/junit5/
+   */
+  const val junit_jupiter_api: String = "org.junit.jupiter:junit-jupiter-api:" +
+      Versions.org_junit_jupiter
+
+  /**
+   * https://junit.org/junit5/
+   */
+  const val junit_jupiter_engine: String = "org.junit.jupiter:junit-jupiter-engine:" +
+      Versions.org_junit_jupiter
+
+  /**
+   * https://junit.org/junit5/
+   */
+  const val junit_jupiter_params: String = "org.junit.jupiter:junit-jupiter-params:" +
+      Versions.org_junit_jupiter
 }

@@ -5,6 +5,12 @@
 
     <data>
 
+        <import type="com.novemio.android.revolut.presentation.screens.rates.RatesState.NoConnection" />
+
+        <import type="com.novem.lib.core.presentation.utils.BindingUtils" />
+
+        <import type="com.novemio.android.revolut.presentation.screens.rates.RateBindingJava" />
+
         <variable
             name="vm"
             type="com.novemio.android.revolut.presentation.screens.rates.RatesViewModel" />
@@ -18,7 +24,11 @@
 
         <include
             android:id="@+id/include"
-            layout="@layout/toolbar_rate" />
+            layout="@layout/toolbar_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/tvNoItems"
@@ -39,10 +49,22 @@
             android:paddingBottom="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:listitem="@layout/list_item_rates"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include" />
+            app:layout_constraintTop_toBottomOf="@+id/include"
+            tools:listitem="@layout/list_item_rates" />
+
+        <com.novemio.android.revolut.presentation.base.widget.NoConnectionView
+            android:id="@+id/viewNoConnection"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/rvConverterList"
+            app:layout_constraintEnd_toEndOf="@+id/rvConverterList"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include"
+            app:ratesState="@{vm.screenState}" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

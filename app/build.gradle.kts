@@ -108,6 +108,9 @@ dependencies {
     //log
     implementation(Libs.timberkt)
 
+    implementation (Libs.lottie)
+
+    implementation ("com.github.pwittchen:reactivenetwork-rx2:3.0.6")
     //Android libs
     implementation(Libs.constraintlayout)
     implementation(Libs.recyclerview)

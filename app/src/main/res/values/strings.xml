@@ -3,4 +3,5 @@
 
     <string name="fragment_license_button_activate">Activate</string>
     <string name="fragment_rates_title">Rates</string>
+    <string name="no_connection">No Connection</string>
 </resources>
