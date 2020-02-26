@@ -1,13 +1,13 @@
 package com.novemio.android.revolut.presentation.screens.rates
 
 import android.os.Bundle
-import com.novem.lib.core.presentation.CoreFragment
 import com.novem.lib.core.presentation.viewmodel.ifOnChildRenderState
 import com.novem.lib.core.utils.observeBy
 import com.novemio.android.revolut.R
 import com.novemio.android.revolut.databinding.FragmentRatesBinding
 import com.novemio.android.revolut.domain.currency.model.Rate
 import com.novemio.android.revolut.presentation.base.BaseFragment
+import com.novemio.android.revolut.presentation.base.widget.onState
 import com.novemio.android.revolut.presentation.screens.rates.adapter.ConverterAdapter
 import kotlinx.android.synthetic.main.fragment_rates.*
 import kotlinx.android.synthetic.main.toolbar_default.*
@@ -37,6 +37,8 @@ class RatesFragment :
 
     override fun setObservers() {
         viewModel.screenState.observeBy(viewLifecycleOwner) { rateScreenState ->
+            loadingDialog().onState(rateScreenState)
+
             rateScreenState.ifOnChildRenderState<RatesState, RatesState.OnSuccess> {
                 if (currencyChanged) {
                     currencyChanged = false

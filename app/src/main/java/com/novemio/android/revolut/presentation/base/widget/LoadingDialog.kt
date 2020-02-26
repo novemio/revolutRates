@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import com.github.ajalt.timberkt.Timber
+import com.novem.lib.core.presentation.viewmodel.ScreenState
 import com.novemio.android.revolut.R
 import kotlinx.android.synthetic.main.dialog_loading.lvLoading
 
@@ -55,4 +56,18 @@ class LoadingDialog constructor(context: Context) : Dialog(context, R.style.AppT
 		}
 	}
 	
+}
+fun Boolean.toLoadingDialog(loadingDialog: LoadingDialog) {
+	if (this) loadingDialog.show() else loadingDialog.hide()
+}
+
+fun LoadingDialog.onState(state: ScreenState<*>) {
+	when (state) {
+		is ScreenState.Loading -> {
+			this.show()
+		}
+		is ScreenState.Render -> {
+			this.dismiss()
+		}
+	}
 }
