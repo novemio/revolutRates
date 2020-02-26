@@ -31,12 +31,14 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
 	}
 
-
 	fun getData(): List<T> = adapterData
 
 	fun getItemOnPosition(position: Int): T = adapterData[position]
 
 	fun getItemsFromTo(from: Int, to: Int): List<T> = adapterData.subList(from, to)
+
+	fun ViewGroup.inflate(resId: Int, attachToRoute: Boolean = false): View =
+		LayoutInflater.from(context).inflate(resId, this, attachToRoute)
 
 	open fun notifyChanged(old: List<T>, new: List<T>) = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
 
@@ -50,10 +52,4 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 		override fun getNewListSize() = new.size
 
 	})
-
-
-
-	fun ViewGroup.inflate(resId: Int, attachToRoute: Boolean = false): View =
-		LayoutInflater.from(context).inflate(resId, this, attachToRoute)
-
 }

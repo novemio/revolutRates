@@ -3,7 +3,7 @@
 	android:opacity="opaque">
 	<item android:drawable="@color/colorWhite"/>
 	<item
-		android:drawable="@drawable/ic_android"
+		android:drawable="@drawable/ic_revolut"
 		android:gravity="center"/>
 
 

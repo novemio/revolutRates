@@ -4,8 +4,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 
-private val TAG by lazy { NumberTextWatcher::class.java.simpleName }
-
 private const val DOUBLE_INTEGER_DIGITS = 309
 
 class NumberTextWatcher(

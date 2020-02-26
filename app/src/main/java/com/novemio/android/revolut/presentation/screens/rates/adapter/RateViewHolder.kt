@@ -3,7 +3,6 @@ package com.novemio.android.revolut.presentation.screens.rates.adapter
 import android.annotation.SuppressLint
 import android.net.Uri
 import android.text.Editable
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
@@ -11,7 +10,7 @@ import com.novem.lib.core.presentation.BaseViewHolder
 import com.novem.lib.core.utils.isNotNullOrEmpty
 import com.novemio.android.revolut.domain.currency.model.RATE_NOTHING
 import com.novemio.android.revolut.domain.currency.model.Rate
-import com.novemio.android.revolut.presentation.screens.rates.ResourceUtils
+import com.novemio.android.revolut.presentation.ResourceUtils
 import kotlinx.android.synthetic.main.list_item_rates.view.*
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
