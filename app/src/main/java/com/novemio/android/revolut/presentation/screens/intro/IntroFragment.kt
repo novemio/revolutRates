@@ -20,8 +20,9 @@ class IntroFragment : SimpleBaseFragment() {
 		tvSplash.text = ""
 	}
 
-	override fun onStart() {
-		super.onStart()
+	override fun onResume() {
+		super.onResume()
+		index=0
 		animateText(0)
 	}
 	private fun animateText(delay: Long = 200) {
