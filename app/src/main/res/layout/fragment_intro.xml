@@ -17,7 +17,7 @@
 		android:layout_marginTop="100dp"
 		android:layout_marginEnd="24dp"
 		android:textAlignment="center"
-		android:textColor="@color/colorAccent"
+		android:textColor="@color/colorPrimaryDark"
 		android:textSize="24sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"

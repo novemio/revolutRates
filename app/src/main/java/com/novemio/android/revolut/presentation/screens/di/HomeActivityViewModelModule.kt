@@ -6,8 +6,8 @@ import com.novem.lib.core.di.viewmodel.ViewModelFactory
 import com.novem.lib.core.di.viewmodel.ViewModelKey
 import com.novemio.android.revolut.presentation.screens.HomeActivity
 import com.novemio.android.revolut.presentation.screens.HomeViewModel
-import com.novemio.android.revolut.presentation.screens.converter.ConverterFragment
-import com.novemio.android.revolut.presentation.screens.converter.ConverterViewModel
+import com.novemio.android.revolut.presentation.screens.rates.RatesFragment
+import com.novemio.android.revolut.presentation.screens.rates.RatesViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -26,6 +26,6 @@ abstract class HomeActivityViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(ConverterFragment::class, ConverterViewModel::class)
-    internal abstract fun bindPermissionViewModel(permissionViewModel: ConverterViewModel): ViewModel
+    @ViewModelKey(RatesFragment::class, RatesViewModel::class)
+    internal abstract fun bindPermissionViewModel(permissionViewModel: RatesViewModel): ViewModel
 }

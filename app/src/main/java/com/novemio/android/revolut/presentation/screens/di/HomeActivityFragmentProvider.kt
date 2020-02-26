@@ -1,7 +1,7 @@
 package com.novemio.android.revolut.presentation.screens.di
 
 import com.novem.lib.core.di.scopes.FragmentScope
-import com.novemio.android.revolut.presentation.screens.converter.ConverterFragment
+import com.novemio.android.revolut.presentation.screens.rates.RatesFragment
 import com.novemio.android.revolut.presentation.screens.intro.IntroFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -17,6 +17,6 @@ abstract class HomeActivityFragmentProvider {
 
     @FragmentScope
     @ContributesAndroidInjector
-    abstract fun contributeConverterFragmentInjector(): ConverterFragment
+    abstract fun contributeConverterFragmentInjector(): RatesFragment
 
 }

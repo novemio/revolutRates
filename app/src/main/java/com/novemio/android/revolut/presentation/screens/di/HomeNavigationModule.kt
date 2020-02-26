@@ -4,8 +4,8 @@ import android.app.Activity
 import com.novem.lib.core.di.routes.*
 import com.novemio.android.revolut.presentation.screens.HomeActivity
 import com.novemio.android.revolut.presentation.screens.HomeNavigationController
-import com.novemio.android.revolut.presentation.screens.converter.ConverterFragment
-import com.novemio.android.revolut.presentation.screens.converter.ConverterRoutes
+import com.novemio.android.revolut.presentation.screens.rates.RatesFragment
+import com.novemio.android.revolut.presentation.screens.rates.RatesRoutes
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -25,7 +25,7 @@ abstract class HomeNavigationModule {
 
     @Binds
     @IntoMap
-    @RouteKey(ConverterFragment::class)
-    internal abstract fun bindConverterRoutes(route: ConverterRoutes): Routes
+    @RouteKey(RatesFragment::class)
+    internal abstract fun bindConverterRoutes(route: RatesRoutes): Routes
 
 }

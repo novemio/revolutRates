@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
+
+    <array name="currencies_list">
+        <item>@array/currency.GBP</item>
+        <item>@array/currency.EUR</item>
+        <item>@array/currency.USD</item>
+        <item>@array/currency.AFN</item>
+        <item>@array/currency.ALL</item>
+        <item>@array/currency.DZD</item>
+        <item>@array/currency.AOA</item>
+        <item>@array/currency.ARS</item>
+        <item>@array/currency.AMD</item>
+        <item>@array/currency.AWG</item>
+        <item>@array/currency.AUD</item>
+        <item>@array/currency.AZN</item>
+        <item>@array/currency.BSD</item>
+        <item>@array/currency.BHD</item>
+        <item>@array/currency.BDT</item>
+        <item>@array/currency.BBD</item>
+        <item>@array/currency.BYN</item>
+        <item>@array/currency.BZD</item>
+        <item>@array/currency.BMD</item>
+        <item>@array/currency.BOB</item>
+        <item>@array/currency.BAM</item>
+        <item>@array/currency.BWP</item>
+        <item>@array/currency.BRL</item>
+        <item>@array/currency.BND</item>
+        <item>@array/currency.BGN</item>
+        <item>@array/currency.KHR</item>
+        <item>@array/currency.CAD</item>
+        <item>@array/currency.CVE</item>
+        <item>@array/currency.KYD</item>
+        <item>@array/currency.CLP</item>
+        <item>@array/currency.CNY</item>
+        <item>@array/currency.COP</item>
+        <item>@array/currency.CRC</item>
+        <item>@array/currency.HRK</item>
+        <item>@array/currency.CUC</item>
+        <item>@array/currency.CZK</item>
+        <item>@array/currency.DKK</item>
+        <item>@array/currency.DOP</item>
+        <item>@array/currency.ANG</item>
+        <item>@array/currency.EGP</item>
+        <item>@array/currency.ETB</item>
+        <item>@array/currency.FKP</item>
+        <item>@array/currency.FJD</item>
+        <item>@array/currency.GMD</item>
+        <item>@array/currency.GEL</item>
+        <item>@array/currency.GHS</item>
+        <item>@array/currency.GIP</item>
+        <item>@array/currency.GTQ</item>
+        <item>@array/currency.GGP</item>
+        <item>@array/currency.GNF</item>
+        <item>@array/currency.GYD</item>
+        <item>@array/currency.HTG</item>
+        <item>@array/currency.HNL</item>
+        <item>@array/currency.HKD</item>
+        <item>@array/currency.HUF</item>
+        <item>@array/currency.ISK</item>
+        <item>@array/currency.INR</item>
+        <item>@array/currency.IDR</item>
+        <item>@array/currency.IQD</item>
+        <item>@array/currency.IMP</item>
+        <item>@array/currency.ILS</item>
+        <item>@array/currency.JMD</item>
+        <item>@array/currency.JPY</item>
+        <item>@array/currency.JEP</item>
+        <item>@array/currency.JOD</item>
+        <item>@array/currency.KZT</item>
+        <item>@array/currency.KES</item>
+        <item>@array/currency.KWD</item>
+        <item>@array/currency.KGS</item>
+        <item>@array/currency.LAK</item>
+        <item>@array/currency.LBP</item>
+        <item>@array/currency.LSL</item>
+        <item>@array/currency.MOP</item>
+        <item>@array/currency.MKD</item>
+        <item>@array/currency.MGA</item>
+        <item>@array/currency.MWK</item>
+        <item>@array/currency.MYR</item>
+        <item>@array/currency.MVR</item>
+        <item>@array/currency.MUR</item>
+        <item>@array/currency.MXN</item>
+        <item>@array/currency.MDL</item>
+        <item>@array/currency.MAD</item>
+        <item>@array/currency.MZN</item>
+        <item>@array/currency.MMK</item>
+        <item>@array/currency.NAD</item>
+        <item>@array/currency.NPR</item>
+        <item>@array/currency.NZD</item>
+        <item>@array/currency.NIO</item>
+        <item>@array/currency.NGN</item>
+        <item>@array/currency.NOK</item>
+        <item>@array/currency.OMR</item>
+        <item>@array/currency.PKR</item>
+        <item>@array/currency.PAB</item>
+        <item>@array/currency.PGK</item>
+        <item>@array/currency.PYG</item>
+        <item>@array/currency.PEN</item>
+        <item>@array/currency.PHP</item>
+        <item>@array/currency.PLN</item>
+        <item>@array/currency.QAR</item>
+        <item>@array/currency.RON</item>
+        <item>@array/currency.RUB</item>
+        <item>@array/currency.RWF</item>
+        <item>@array/currency.SVC</item>
+        <item>@array/currency.SAR</item>
+        <item>@array/currency.RSD</item>
+        <item>@array/currency.SCR</item>
+        <item>@array/currency.SGD</item>
+        <item>@array/currency.SBD</item>
+        <item>@array/currency.ZAR</item>
+        <item>@array/currency.KRW</item>
+        <item>@array/currency.LKR</item>
+        <item>@array/currency.SRD</item>
+        <item>@array/currency.SEK</item>
+        <item>@array/currency.CHF</item>
+        <item>@array/currency.TWD</item>
+        <item>@array/currency.TZS</item>
+        <item>@array/currency.THB</item>
+        <item>@array/currency.TOP</item>
+        <item>@array/currency.TTD</item>
+        <item>@array/currency.TND</item>
+        <item>@array/currency.TRY</item>
+        <item>@array/currency.TMT</item>
+        <item>@array/currency.UGX</item>
+        <item>@array/currency.UAH</item>
+        <item>@array/currency.AED</item>
+        <item>@array/currency.UYU</item>
+        <item>@array/currency.VES</item>
+        <item>@array/currency.VND</item>
+        <item>@array/currency.ZMW</item>
+        <item>@array/currency.XAU</item>
+    </array>
+    <array name="currency.AED">
+        <item>AED</item>
+        <item>United Arab Emirates Dirham</item>
+    </array>
+    <array name="currency.AFN">
+        <item>AFN</item>
+        <item>Afghan Afghani</item>
+    </array>
+    <array name="currency.ALL">
+        <item>ALL</item>
+        <item>Albanian Lek</item>
+    </array>
+    <array name="currency.AMD">
+        <item>AMD</item>
+        <item>Armenian Dram</item>
+    </array>
+    <array name="currency.ANG">
+        <item>ANG</item>
+        <item>Dutch Antilles Guilder</item>
+    </array>
+    <array name="currency.AOA">
+        <item>AOA</item>
+        <item>Angolan Kwanza</item>
+    </array>
+    <array name="currency.ARS">
+        <item>ARS</item>
+        <item>Argentine Peso</item>
+    </array>
+    <array name="currency.AUD">
+        <item>AUD</item>
+        <item>Australian Dollar</item>
+        <item>AU</item>
+        <item>A$</item>
+    </array>
+    <array name="currency.AWG">
+        <item>AWG</item>
+        <item>Aruban or Dutch Guilder</item>
+    </array>
+    <array name="currency.AZN">
+        <item>AZN</item>
+        <item>Azerbaijani New Manat</item>
+    </array>
+    <array name="currency.BAM">
+        <item>BAM</item>
+        <item>Bosnian Convertible Marka</item>
+    </array>
+    <array name="currency.BBD">
+        <item>BBD</item>
+        <item>Barbadian or Bajan Dollar</item>
+    </array>
+    <array name="currency.BDT">
+        <item>BDT</item>
+        <item>Bangladeshi Taka</item>
+    </array>
+    <array name="currency.BGN">
+        <item>BGN</item>
+        <item>Bulgarian Lev</item>
+    </array>
+    <array name="currency.BHD">
+        <item>BHD</item>
+        <item>Bahraini Dinar</item>
+    </array>
+    <array name="currency.BMD">
+        <item>BMD</item>
+        <item>Bermudan Dollar</item>
+    </array>
+    <array name="currency.BND">
+        <item>BND</item>
+        <item>Bruneian Dollar</item>
+    </array>
+    <array name="currency.BOB">
+        <item>BOB</item>
+        <item>Bolivian Boliviano</item>
+    </array>
+    <array name="currency.BRL">
+        <item>BRL</item>
+        <item>Brazilian Real</item>
+    </array>
+    <array name="currency.BSD">
+        <item>BSD</item>
+        <item>Bahamian Dollar</item>
+    </array>
+    <array name="currency.BWP">
+        <item>BWP</item>
+        <item>Botswana Pula</item>
+    </array>
+    <array name="currency.BYN">
+        <item>BYN</item>
+        <item>Belarusian Ruble</item>
+    </array>
+    <array name="currency.BZD">
+        <item>BZD</item>
+        <item>Belizean Dollar</item>
+    </array>
+    <array name="currency.CAD">
+        <item>CAD</item>
+        <item>Canadian Dollar</item>
+    </array>
+    <array name="currency.CHF">
+        <item>CHF</item>
+        <item>Swiss Franc</item>
+    </array>
+    <array name="currency.CLP">
+        <item>CLP</item>
+        <item>Chilean Peso</item>
+    </array>
+    <array name="currency.CNY">
+        <item>CNY</item>
+        <item>Chinese Yuan Renminbi</item>
+    </array>
+    <array name="currency.COP">
+        <item>COP</item>
+        <item>Colombian Peso</item>
+    </array>
+    <array name="currency.CRC">
+        <item>CRC</item>
+        <item>Costa Rican Colon</item>
+    </array>
+    <array name="currency.CUC">
+        <item>CUC</item>
+        <item>Cuban Convertible Peso</item>
+    </array>
+    <array name="currency.CVE">
+        <item>CVE</item>
+        <item>Cape Verdean Escudo</item>
+    </array>
+    <array name="currency.CZK">
+        <item>CZK</item>
+        <item>Czech Koruna</item>
+    </array>
+    <array name="currency.DKK">
+        <item>DKK</item>
+        <item>Danish Krone</item>
+    </array>
+    <array name="currency.DOP">
+        <item>DOP</item>
+        <item>Dominican Peso</item>
+    </array>
+    <array name="currency.DZD">
+        <item>DZD</item>
+        <item>Algerian Dinar</item>
+    </array>
+    <array name="currency.EGP">
+        <item>EGP</item>
+        <item>Egyptian Pound</item>
+    </array>
+    <array name="currency.ETB">
+        <item>ETB</item>
+        <item>Ethiopian Birr</item>
+    </array>
+    <array name="currency.EUR">
+        <item>EUR</item>
+        <item>Euro</item>
+    </array>
+    <array name="currency.FJD">
+        <item>FJD</item>
+        <item>Fijian Dollar</item>
+    </array>
+    <array name="currency.FKP">
+        <item>FKP</item>
+        <item>Falkland Island Pound</item>
+    </array>
+    <array name="currency.GBP">
+        <item>GBP</item>
+        <item>British Pound</item>
+    </array>
+    <array name="currency.GEL">
+        <item>GEL</item>
+        <item>Georgian Lari</item>
+    </array>
+    <array name="currency.GGP">
+        <item>GGP</item>
+        <item>Guernsey Pound</item>
+    </array>
+    <array name="currency.GHS">
+        <item>GHS</item>
+        <item>Ghanaian Cedi</item>
+    </array>
+    <array name="currency.GIP">
+        <item>GIP</item>
+        <item>Gibraltar Pound</item>
+    </array>
+    <array name="currency.GMD">
+        <item>GMD</item>
+        <item>Gambian Dalasi</item>
+    </array>
+    <array name="currency.GNF">
+        <item>GNF</item>
+        <item>Guinean Franc</item>
+
+    </array>
+    <array name="currency.GTQ">
+        <item>GTQ</item>
+        <item>Guatemalan Quetzal</item>
+
+    </array>
+    <array name="currency.GYD">
+        <item>GYD</item>
+        <item>Guyanese Dollar</item>
+
+    </array>
+    <array name="currency.HKD">
+        <item>HKD</item>
+        <item>Hong Kong Dollar</item>
+
+    </array>
+    <array name="currency.HNL">
+        <item>HNL</item>
+        <item>Honduran Lempira</item>
+    </array>
+    <array name="currency.HRK">
+        <item>HRK</item>
+        <item>Croatian Kuna</item>
+    </array>
+    <array name="currency.HTG">
+        <item>HTG</item>
+        <item>Haitian Gourde</item>
+
+    </array>
+    <array name="currency.HUF">
+        <item>HUF</item>
+        <item>Hungarian Forint</item>
+    </array>
+    <array name="currency.IDR">
+        <item>IDR</item>
+        <item>Indonesian Rupiah</item>
+    </array>
+    <array name="currency.ILS">
+        <item>ILS</item>
+        <item>Israeli New Sheqel</item>
+    </array>
+    <array name="currency.IMP">
+        <item>IMP</item>
+        <item>Isle of Man Pound</item>
+    </array>
+    <array name="currency.INR">
+        <item>INR</item>
+        <item>Indian Rupee</item>
+    </array>
+    <array name="currency.IQD">
+        <item>IQD</item>
+        <item>Iraqi Dinar</item>
+    </array>
+    <array name="currency.ISK">
+        <item>ISK</item>
+        <item>Icelandic Krona</item>
+    </array>
+    <array name="currency.JEP">
+        <item>JEP</item>
+        <item>Jersey Pound</item>
+    </array>
+    <array name="currency.JMD">
+        <item>JMD</item>
+        <item>Jamaican Dollar</item>
+    </array>
+    <array name="currency.JOD">
+        <item>JOD</item>
+        <item>Jordanian Dinar</item>
+    </array>
+    <array name="currency.JPY">
+        <item>JPY</item>
+        <item>Japanese Yen</item>
+    </array>
+    <array name="currency.KES">
+        <item>KES</item>
+        <item>Kenyan Shilling</item>
+    </array>
+    <array name="currency.KGS">
+        <item>KGS</item>
+        <item>Kyrgyzstani Som</item>
+    </array>
+    <array name="currency.KHR">
+        <item>KHR</item>
+        <item>Cambodian Riel</item>
+    </array>
+    <array name="currency.KRW">
+        <item>KRW</item>
+        <item>South Korean Won</item>
+    </array>
+    <array name="currency.KWD">
+        <item>KWD</item>
+        <item>Kuwaiti Dinar</item>
+    </array>
+    <array name="currency.KYD">
+        <item>KYD</item>
+        <item>Caymanian Dollar</item>
+    </array>
+    <array name="currency.KZT">
+        <item>KZT</item>
+        <item>Kazakhstan Tenge</item>
+    </array>
+    <array name="currency.LAK">
+        <item>LAK</item>
+        <item>Laos Kip</item>
+    </array>
+    <array name="currency.LBP">
+        <item>LBP</item>
+        <item>Lebanese Pound</item>
+    </array>
+    <array name="currency.LKR">
+        <item>LKR</item>
+        <item>Sri Lankan Rupee</item>
+    </array>
+    <array name="currency.LSL">
+        <item>LSL</item>
+        <item>Lesotho Loti</item>
+    </array>
+
+    <array name="currency.MAD">
+        <item>MAD</item>
+        <item>Moroccan Dirham</item>
+    </array>
+    <array name="currency.MDL">
+        <item>MDL</item>
+        <item>Moldovan Leu</item>
+    </array>
+    <array name="currency.MGA">
+        <item>MGA</item>
+        <item>Malagasy Ariary</item>
+    </array>
+    <array name="currency.MKD">
+        <item>MKD</item>
+        <item>Macedonian Denar</item>
+    </array>
+    <array name="currency.MMK">
+        <item>MMK</item>
+        <item>Myanmar Kyat</item>
+    </array>
+    <array name="currency.MOP">
+        <item>MOP</item>
+        <item>Macanese Pataca</item>
+    </array>
+    <array name="currency.MUR">
+        <item>MUR</item>
+        <item>Mauritian Rupee</item>
+    </array>
+    <array name="currency.MVR">
+        <item>MVR</item>
+        <item>Maldivian Rufiyaa</item>
+    </array>
+    <array name="currency.MWK">
+        <item>MWK</item>
+        <item>Malawian Kwacha</item>
+    </array>
+    <array name="currency.MXN">
+        <item>MXN</item>
+        <item>Mexican Peso</item>
+    </array>
+    <array name="currency.MYR">
+        <item>MYR</item>
+        <item>Malaysian Ringgit</item>
+    </array>
+    <array name="currency.MZN">
+        <item>MZN</item>
+        <item>Mozambican Metical</item>
+    </array>
+    <array name="currency.NAD">
+        <item>NAD</item>
+        <item>Namibian Dollar</item>
+    </array>
+    <array name="currency.NGN">
+        <item>NGN</item>
+        <item>Nigerian Naira</item>
+    </array>
+    <array name="currency.NIO">
+        <item>NIO</item>
+        <item>Nicaraguan Cordoba</item>
+    </array>
+    <array name="currency.NOK">
+        <item>NOK</item>
+        <item>Norwegian Krona</item>
+    </array>
+    <array name="currency.NPR">
+        <item>NPR</item>
+        <item>Nepalese Rupee</item>
+    </array>
+    <array name="currency.NZD">
+        <item>NZD</item>
+        <item>New Zealand Dollar</item>
+    </array>
+    <array name="currency.OMR">
+        <item>OMR</item>
+        <item>Omani Rial</item>
+    </array>
+    <array name="currency.PAB">
+        <item>PAB</item>
+        <item>Panama Balboa</item>
+    </array>
+    <array name="currency.PEN">
+        <item>PEN</item>
+        <item>Peruvian Sol</item>
+    </array>
+    <array name="currency.PGK">
+        <item>PGK</item>
+        <item>Papua New Guinean Kina</item>
+    </array>
+    <array name="currency.PHP">
+        <item>PHP</item>
+        <item>Philippine Peso</item>
+    </array>
+    <array name="currency.PKR">
+        <item>PKR</item>
+        <item>Pakistani Rupee</item>
+    </array>
+    <array name="currency.PLN">
+        <item>PLN</item>
+        <item>Polish Zloty</item>
+    </array>w
+    <array name="currency.PYG">
+        <item>PYG</item>
+        <item>Paraguayan Guarani</item>
+    </array>
+    <array name="currency.QAR">
+        <item>QAR</item>
+        <item>Qatari Riyal</item>
+    </array>
+    <array name="currency.RON">
+        <item>RON</item>
+        <item>Romanian Leu</item>
+    </array>
+    <array name="currency.RSD">
+        <item>RSD</item>
+        <item>Serbian Dinar</item>
+    </array>
+    <array name="currency.RUB">
+        <item>RUB</item>
+        <item>Russian Ruble</item>
+    </array>
+    <array name="currency.RWF">
+        <item>RWF</item>
+        <item>Rwandan Franc</item>
+    </array>
+    <array name="currency.SAR">
+        <item>SAR</item>
+        <item>Saudi Arabian Riyal</item>
+    </array>
+    <array name="currency.SBD">
+        <item>SBD</item>
+        <item>Solomon Islands Dollar</item>
+    </array>
+    <array name="currency.SCR">
+        <item>SCR</item>
+        <item>Seychelles Rupee</item>
+    </array>
+    <array name="currency.SEK">
+        <item>SEK</item>
+        <item>Swedish Krona</item>
+    </array>
+    <array name="currency.SGD">
+        <item>SGD</item>
+        <item>Singapore Dollar</item>
+    </array>
+    <array name="currency.SRD">
+        <item>SRD</item>
+        <item>Surinamese Dollar</item>
+    </array>
+    <array name="currency.SVC">
+        <item>SVC</item>
+        <item>Salvadoran Colon</item>
+    </array>
+    <array name="currency.THB">
+        <item>THB</item>
+        <item>Thai Baht</item>
+    </array>
+    <array name="currency.TMT">
+        <item>TMT</item>
+        <item>Turkmenistani New Manat</item>
+    </array>
+    <array name="currency.TND">
+        <item>TND</item>
+        <item>Tunisian Dinar</item>
+    </array>
+    <array name="currency.TOP">
+        <item>TOP</item>
+        <item>Tongan Pa\'anga</item>
+    </array>
+    <array name="currency.TRY">
+        <item>TRY</item>
+        <item>Turkish Lira</item>
+    </array>
+    <array name="currency.TTD">
+        <item>TTD</item>
+        <item>Trinidadian Dollar</item>
+    </array>
+    <array name="currency.TWD">
+        <item>TWD</item>
+        <item>Taiwanese New Dollar</item>
+    </array>
+    <array name="currency.TZS">
+        <item>TZS</item>
+        <item>Tanzanian Shilling</item>
+    </array>
+    <array name="currency.UAH">
+        <item>UAH</item>
+        <item>Ukrainian Hryvnia</item>
+    </array>
+    <array name="currency.UGX">
+        <item>UGX</item>
+        <item>Ugandan Shilling</item>
+    </array>
+    <array name="currency.USD">
+        <item>USD</item>
+        <item>US Dollar</item>
+    </array>
+    <array name="currency.UYU">
+        <item>UYU</item>
+        <item>Uruguayan Peso</item>
+    </array>
+    <array name="currency.VEF">
+        <item>VEF</item>
+        <item>Venezuelan Bolivar</item>
+    </array>
+    <array name="currency.VES">
+        <item>VES</item>
+        <item>Venezuelan Bolivar</item>
+    </array>
+    <array name="currency.VND">
+        <item>VND</item>
+        <item>Vietnamese Dong</item>
+    </array>
+    <array name="currency.XAU">
+        <item>XAU</item>
+        <item>Gold</item>
+    </array>
+    <array name="currency.ZAR">
+        <item>ZAR</item>
+        <item>South African Rand</item>
+    </array>
+    <array name="currency.ZMW">
+        <item>ZMW</item>
+        <item>Zambian Kwacha</item>
+    </array>
+</resources>
