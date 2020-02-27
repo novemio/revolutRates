@@ -15,8 +15,6 @@ class CurrencyRateRawAdapter : JsonAdapter<CurrencyRateRaw>() {
         moshi.adapter<String>(String::class.java, emptySet(), KEY_BASE)
 
 
-
-
     @FromJson
     override fun fromJson(reader: JsonReader): CurrencyRateRaw {
         var baseCurrency: String? = null
@@ -26,15 +24,8 @@ class CurrencyRateRawAdapter : JsonAdapter<CurrencyRateRaw>() {
             when (reader.selectName(options)) {
                 0 -> baseCurrency = stringAdapter.fromJson(reader)
                     ?: throw JsonDataException("Non-null value 'baseCurrency' was null at ${reader.path}")
-                1 -> {
-                    val ratesObject = reader.readJsonValue() as Map<String,Double>
-                    ratesList = mutableListOf()
-                    ratesObject.entries.forEach {
-                        ratesList.add(RateRaw(it.key, it.value))
-                    }
-                }
-                -1 -> {
-                    // Unknown name, skip it.
+                1 -> ratesList = parseRateList(reader)
+                -1 -> { // Unknown name, skip it.
                     reader.skipName()
                     reader.skipValue()
                 }
@@ -42,7 +33,7 @@ class CurrencyRateRawAdapter : JsonAdapter<CurrencyRateRaw>() {
         }
         reader.endObject()
         return CurrencyRateRaw(
-            baseCurrency = baseCurrency
+            baseCurrency
                 ?: throw JsonDataException("Required property 'baseCurrency' missing at ${reader.path}"),
             ratesList = ratesList
                 ?: throw JsonDataException("Required property 'ratesList' missing at ${reader.path}")
@@ -54,4 +45,12 @@ class CurrencyRateRawAdapter : JsonAdapter<CurrencyRateRaw>() {
     }
 
 
+    private fun parseRateList(reader: JsonReader): MutableList<RateRaw> {
+        val ratesObject = reader.readJsonValue() as Map<String, Double>
+        val ratesList = mutableListOf<RateRaw>()
+        ratesObject.entries.forEach {
+            ratesList.add(RateRaw(it.key, it.value))
+        }
+        return ratesList
+    }
 }

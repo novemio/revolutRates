@@ -2,6 +2,7 @@ package com.novemio.android.revolut.presentation.screens.rates.adapter
 
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
+import java.text.ParseException
 import java.util.*
 
 /**
@@ -47,7 +48,9 @@ class CurrencyFormatter {
                 hasFractionalPart -> df.format(number)
                 else -> dfnd.format(number)
             }
-        } catch (e: Exception) {
+        } catch (e: ParseException) {
+            ""
+        } catch (e: IllegalArgumentException) {
             ""
         }
     }

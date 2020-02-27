@@ -47,7 +47,7 @@ class ObserveCurrencyRateTest {
 	
 	// endregion helper fields ------------------------------------------------------------------------
 	
-	@Suppress(names = ["PropertyName", "VariableNaming"])
+	@Suppress("PropertyName", "VariableNaming")
 	@SpyK
 	internal var SUT = ObserveCurrencyRate(mockRatesRepository)
 	

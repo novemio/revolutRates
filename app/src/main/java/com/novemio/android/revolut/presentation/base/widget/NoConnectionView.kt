@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.Animation
 import android.widget.FrameLayout
 import androidx.databinding.BindingAdapter
 import com.novem.lib.core.presentation.utils.hideKeyboard
@@ -17,11 +16,9 @@ import kotlinx.android.synthetic.main.view_no_connection.view.*
 class NoConnectionView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :
     FrameLayout(context, attrs) {
 
-    private lateinit var animationLottie: Animation
 
     init {
         initialize()
-        initializeAttributes(attrs)
         initState()
     }
 
@@ -31,9 +28,6 @@ class NoConnectionView @JvmOverloads constructor(context: Context, attrs: Attrib
 
     }
 
-    private fun initializeAttributes(attrs: AttributeSet?) {
-
-    }
 
     private fun initState() {
         visibility = View.GONE

@@ -43,7 +43,7 @@ class RatesViewModelTest {
 	private lateinit var networkObservable: PublishSubject<Boolean>
 	// endregion helper fields ------------------------------------------------------------------------
 	
-	@Suppress(names = ["PropertyName", "VariableNaming"])
+	@Suppress("PropertyName", "VariableNaming")
 	internal lateinit var SUT: RatesViewModel
 	
 	@BeforeEach

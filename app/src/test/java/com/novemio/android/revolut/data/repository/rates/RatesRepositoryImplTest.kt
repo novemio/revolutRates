@@ -36,7 +36,7 @@ class RatesRepositoryImplTest {
 	
 	// endregion helper fields ------------------------------------------------------------------------
 	
-	@Suppress(names = ["PropertyName", "VariableNaming"])
+	@Suppress("PropertyName", "VariableNaming")
 	lateinit var SUT: RatesRepositoryImpl
 	
 	@BeforeEach

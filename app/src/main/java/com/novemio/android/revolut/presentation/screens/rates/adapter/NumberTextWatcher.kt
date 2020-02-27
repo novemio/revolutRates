@@ -5,6 +5,7 @@ import android.text.TextWatcher
 import android.widget.EditText
 
 private const val DOUBLE_INTEGER_DIGITS = 309
+private const val MAX_INT_DIGITS = 7
 
 class NumberTextWatcher(
     private val et: EditText,
@@ -16,7 +17,7 @@ class NumberTextWatcher(
 
     override fun afterTextChanged(editable: Editable) {
         if (!et.hasFocus()) return
-        val maxIntDig = if (et.hasFocus()) 7 else DOUBLE_INTEGER_DIGITS
+        val maxIntDig = if (et.hasFocus()) MAX_INT_DIGITS else DOUBLE_INTEGER_DIGITS
 
         et.removeTextChangedListener(this)
         currencyFormatter.isDecimalSeparatorAlwaysShown(et.hasFocus())
