@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Revolut Converter</string>
+    <string name="app_name">Revolut Currencies</string>
 
     <string name="fragment_license_button_activate">Activate</string>
     <string name="fragment_rates_title">Rates</string>
