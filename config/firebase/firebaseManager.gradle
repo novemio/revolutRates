@@ -6,6 +6,9 @@ ext.firebaseCredentialsKey = rootProject.file('config/firebase/firebaseCredentia
 ext.firebaseGroupsFile = rootProject.file('config/firebase/firebaseGroups.txt')
 ext.firebaseReleaseNotes = rootProject.file('config/firebase/firebaseReleaseNotes.txt')
 
+ext.firebaseCredentialsKeyPath = firebaseCredentialsKey.path
+ext.firebaseGroupsFilePath = firebaseGroupsFile.path
+ext.firebaseReleaseNotesPath = firebaseReleaseNotes.path
 
 task setFirebaseDeployGroup {
 	doLast {

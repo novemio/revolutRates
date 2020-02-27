@@ -13,6 +13,7 @@ buildscript {
         classpath("com.google.gms:google-services:4.3.3")
         classpath ("com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta02")
         classpath(Libs.navigation_safe_args_gradle_plugin)
+        classpath ("com.google.firebase:firebase-appdistribution-gradle:1.3.1")
     }
 }
 repositories {

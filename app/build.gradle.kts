@@ -8,7 +8,7 @@ buildscript {
     }
 }
 
-apply (from= "../config/firebaseManager.gradle")
+
 
 plugins {
     id("com.android.application")
@@ -22,8 +22,10 @@ plugins {
     id("de.mannodermaus.android-junit5")
     id("com.google.firebase.crashlytics")
     id("com.google.gms.google-services")
+    id("com.google.firebase.appdistribution")
 
 }
+apply(from = "../config/firebase/firebaseManager.gradle.kts")
 
 
 
@@ -98,9 +100,13 @@ android {
 
         getByName("release") {
             isMinifyEnabled = false
-//			isDebuggable = true
-            // Enables resource shrinking, which is performed by the
-            // Android Gradle plugin.
+            firebaseAppDistribution.apply {
+                serviceCredentialsFile = extra.get("firebaseCredentialsKeyPath") as String
+                groupsFile = extra.get("firebaseGroupsFilePath") as String
+                releaseNotesFile  = extra.get("firebaseReleaseNotesPath") as String
+            }
+
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -108,7 +114,6 @@ android {
             manifestPlaceholders = mapOf(
                 "crashlyticsCollectionEnabled" to "true"
             )
-
             signingConfig = signingConfigs.getByName("release")
         }
     }
@@ -231,7 +236,10 @@ configurations.all {
 
 tasks {
     val incrementPatchNumber by register("incrementPatchNumber", tasks.IncrementPatchNumber::class)
-    val incrementRCBuildNumber by register("incrementBuildNumber", tasks.IncrementBuildNumber::class)
+    val incrementRCBuildNumber by register(
+        "incrementBuildNumber",
+        tasks.IncrementBuildNumber::class
+    )
     val incrementPatchAndRCBuildNumber by register(
         "incrementPatchAndBuildNumber",
         tasks.IncrementBuildNumber::class
