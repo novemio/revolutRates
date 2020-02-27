@@ -5,6 +5,7 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import com.github.ajalt.timberkt.Timber
 import com.novem.lib.core.presentation.CoreViewModel
 import com.novem.lib.core.presentation.viewmodel.ObservableScreenState
 import com.novem.lib.core.presentation.viewmodel.ScreenState
@@ -33,6 +34,7 @@ class RatesViewModel @Inject constructor(
 	internal var connectionDisposable: Disposable = connectionManager.observable()
 		.skip(1)
 		.subscribeBy {
+			Timber.d {"Network update $it"}
 			if (it.not()) {
 				screenState.updateValue(RatesState.NoConnection)
 			} else {

@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit.SECONDS
  * Created by novemio on 7/5/19.
  */
 
-private const val TIMEOUT = 30L
+private const val TIMEOUT = 10L
 private const val POOL_SIZE = 5
 private const val KEEP_ALIVE = 300000L
 
