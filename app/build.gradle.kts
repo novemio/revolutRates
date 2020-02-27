@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.tasks.factory.dependsOn
 import de.mannodermaus.gradle.plugins.junit5.junitPlatform
 import signing.getConfiguration
 
@@ -7,6 +8,7 @@ buildscript {
     }
 }
 
+apply (from= "../config/firebaseManager.gradle")
 
 plugins {
     id("com.android.application")
@@ -22,6 +24,8 @@ plugins {
     id("com.google.gms.google-services")
 
 }
+
+
 
 android {
 
@@ -125,7 +129,6 @@ android {
     dataBinding {
         isEnabled = true
     }
-
 }
 
 dependencies {
@@ -223,5 +226,25 @@ dependencies {
 
 configurations.all {
     resolutionStrategy.force("org.jetbrains.kotlin:kotlin-reflect:1.3.40")
+
+}
+
+tasks {
+    val incrementPatchNumber by register("incrementPatchNumber", tasks.IncrementPatchNumber::class)
+    val incrementRCBuildNumber by register("incrementBuildNumber", tasks.IncrementBuildNumber::class)
+    val incrementPatchAndRCBuildNumber by register(
+        "incrementPatchAndBuildNumber",
+        tasks.IncrementBuildNumber::class
+    ).apply {
+        dependsOn(incrementPatchNumber)
+    }
+
+    val createRelease by register("createRelease", tasks.CreateRelease::class).apply {
+        dependsOn(incrementRCBuildNumber)
+    }
+
+    val updateRelease by register("updateRelease", tasks.UpdateRelease::class).apply {
+        dependsOn(incrementRCBuildNumber)
+    }
 
 }

@@ -18,3 +18,4 @@
 # Secret files
 config/signing/releaseKeystore.properties
 config/firebase/firebaseCredentialsKey.json
+app/google-services.json
