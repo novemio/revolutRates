@@ -38,7 +38,7 @@ object Versions {
 
   const val androidx_test: String = "1.2.0"
 
-  const val lottie: String =  "3.3.1"
+  const val lottie: String = "3.3.1"
 
   const val aapt2: String = "3.5.0-5435860" // available: "3.6.0-6040484"
 
@@ -52,6 +52,8 @@ object Versions {
 
   const val com_github_bumptech_glide: String = "4.9.0" // available: "4.11.0"
 
+  const val reactivenetwork_rx2: String = "3.0.6"
+
   const val com_google_auto_value: String = "1.6.6" // available: "1.7"
 
   const val com_google_dagger: String = "2.24" // available: "2.26"
@@ -64,11 +66,14 @@ object Versions {
 
   const val com_squareup_retrofit2: String = "2.6.1" // available: "2.7.1"
 
-  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.5.0" // available: "0.7.0"
+  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.7.0"
 
   const val android_junit5: String = "1.5.1.0" // available: "1.5.2.0"
 
   const val de_mannodermaus_junit5: String = "1.1.0" // available: "1.2.0"
+
+  const val io_gitlab_arturbosch_detekt_gradle_plugin: String = "1.0.0-RC15"
+       // available: "1.6.0"
 
   const val io_mockk: String = "1.9.3"
 

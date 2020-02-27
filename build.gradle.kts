@@ -22,6 +22,7 @@ repositories {
 
 plugins {
     id("de.fayard.buildSrcVersions") version Versions.de_fayard_buildsrcversions_gradle_plugin
+    id("io.gitlab.arturbosch.detekt") version "1.0.0-RC15"
 }
 
 
@@ -33,7 +34,18 @@ allprojects {
 
 
 }
+subprojects {
+    apply(from = "$rootDir/config/quality/quality.gradle.kts")
 
+
+    // Junit 5 For Kotlin
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+
+}
 tasks {
     val clean by registering(Delete::class) {
         delete(buildDir)

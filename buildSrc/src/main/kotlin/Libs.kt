@@ -169,6 +169,12 @@ object Libs {
   const val glide: String = "com.github.bumptech.glide:glide:" + Versions.com_github_bumptech_glide
 
   /**
+   * https://github.com/pwittchen/ReactiveNetwork
+   */
+  const val reactivenetwork_rx2: String = "com.github.pwittchen:reactivenetwork-rx2:" +
+      Versions.reactivenetwork_rx2
+
+  /**
    * https://github.com/google/auto/tree/master/value
    */
   const val auto_value_annotations: String = "com.google.auto.value:auto-value-annotations:" +
@@ -265,6 +271,10 @@ object Libs {
    */
   const val android_test_runner: String = "de.mannodermaus.junit5:android-test-runner:" +
       Versions.de_mannodermaus_junit5
+
+  const val io_gitlab_arturbosch_detekt_gradle_plugin: String =
+      "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:" +
+      Versions.io_gitlab_arturbosch_detekt_gradle_plugin
 
   /**
    * http://mockk.io
