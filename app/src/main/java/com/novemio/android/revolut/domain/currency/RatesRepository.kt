@@ -6,7 +6,7 @@ import io.reactivex.Single
 /**
  * Created by novemio on 2/16/20.
  */
-interface CurrencyRepository {
+interface RatesRepository {
 
 
     fun getCurrencyRate(currency:String): Single<CurrencyRates>

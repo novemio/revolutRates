@@ -1,12 +1,12 @@
-package com.novemio.android.revolut.data.network.api.currency
+package com.novemio.android.revolut.data.network.api.rates
 
-import com.novemio.android.revolut.data.network.api.currency.model.CurrencyRateRaw
+import com.novemio.android.revolut.data.network.api.rates.model.CurrencyRateRaw
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-interface CurrencyApi {
+interface RatesApi {
 
 
     @GET("latest")

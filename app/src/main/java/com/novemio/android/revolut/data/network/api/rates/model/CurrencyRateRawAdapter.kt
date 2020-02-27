@@ -1,4 +1,4 @@
-package com.novemio.android.revolut.data.network.api.currency.model
+package com.novemio.android.revolut.data.network.api.rates.model
 
 import com.squareup.moshi.*
 

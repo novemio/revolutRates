@@ -19,18 +19,9 @@ task setFabricDeployGroup {
 	}
 }
 
-task deployDevAppToFabric() {
-	dependsOn 'assembleDevRelease'
-	finalizedBy 'crashlyticsUploadDistributionDevRelease'
-}
-
-task deployStageAppToFabric() {
-	dependsOn 'assembleStageRelease'
-	finalizedBy 'crashlyticsUploadDistributionStageRelease'
-}
 
 task deployProductionAppToFabric() {
-	dependsOn 'assembleProdRelease'
+	dependsOn 'assembleRelease'
 	finalizedBy 'crashlyticsUploadDistributionProdRelease'
 }
 

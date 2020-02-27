@@ -7,7 +7,7 @@
 
 ext.formatAppName = { variant ->
 	variant.outputs.each { output ->
-		def project = "MuseumApp"
+		def project = "Revolut-Rates"
 		def SEPARATOR = "_"
 		def flavor = variant.productFlavors[0].name
 		def buildType = variant.variantData.variantConfiguration.buildType.name

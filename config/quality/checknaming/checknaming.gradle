@@ -1,8 +1,0 @@
-apply plugin: "check-naming-convention"
-
-checkNamingConvention{
-	configFile = "$rootDir/config/quality/checknaming/checknaming-config.json"
-	resourcePaths = Resources.dirs
-}
-
-

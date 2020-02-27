@@ -1,12 +1,10 @@
 package com.novemio.android.revolut.data.network.retrofit
 
-import com.novem.lib.core.data.network.SessionExpired
 import com.novemio.android.revolut.BuildConfig
-import com.novemio.android.revolut.data.local.authorization.AuthorizationCache
-import com.novemio.android.revolut.data.network.NetworkEvent
-import com.novemio.android.revolut.data.network.NetworkEventBus
-import okhttp3.*
+import okhttp3.ConnectionPool
+import okhttp3.Interceptor
 import okhttp3.Interceptor.Companion.invoke
+import okhttp3.OkHttpClient
 import okhttp3.OkHttpClient.Builder
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -21,15 +19,11 @@ private const val TIMEOUT = 30L
 private const val POOL_SIZE = 5
 private const val KEEP_ALIVE = 300000L
 
-class OkHttpBuilderFactory constructor(
-    private val authorizationCache: AuthorizationCache,
-    private val networkEventBus: NetworkEventBus
-) {
+class OkHttpBuilderFactory {
 
     fun get(): OkHttpClient.Builder {
 
-        return Builder().addInterceptor(getHeaderInterceptor(authorizationCache))
-            .authenticator(getAuthenticator(authorizationCache))
+        return Builder().addInterceptor(getHeaderInterceptor())
             .addNetworkInterceptor(getLogInterceptor())
             .connectTimeout(TIMEOUT, SECONDS)
             .readTimeout(TIMEOUT, SECONDS)
@@ -38,17 +32,9 @@ class OkHttpBuilderFactory constructor(
             .retryOnConnectionFailure(true)
     }
 
-    private fun getAuthenticator(authorizationCache: AuthorizationCache) = object : Authenticator {
 
-        override fun authenticate(route: Route?, response: Response): Request? {
-            networkEventBus.publishEvent(NetworkEvent.UserNotAuthorsed)
-            throw SessionExpired()
-        }
-    }
-
-    private fun getHeaderInterceptor(authorizationCache: AuthorizationCache): Interceptor {
+    private fun getHeaderInterceptor(): Interceptor {
         return invoke { chain ->
-            val token = authorizationCache.getAuthToken()
             val request = chain.request()
                 .newBuilder()
                 .addHeader("Content-Type", "application/json")

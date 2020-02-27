@@ -1,6 +1,6 @@
 package com.novemio.android.revolut.data.network
 
-import com.novemio.android.revolut.data.network.api.currency.CurrencyApi
+import com.novemio.android.revolut.data.network.api.rates.RatesApi
 import com.novemio.android.revolut.data.network.retrofit.RetrofitModule
 import dagger.Module
 import dagger.Provides
@@ -17,8 +17,8 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    internal fun provideCurrencyApi(retrofit: Retrofit): CurrencyApi {
-        return retrofit.create(CurrencyApi::class.java)
+    internal fun provideCurrencyApi(retrofit: Retrofit): RatesApi {
+        return retrofit.create(RatesApi::class.java)
     }
 
 }
