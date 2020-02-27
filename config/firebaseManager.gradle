@@ -1,0 +1,45 @@
+/***
+ * Fabric  functions
+ */
+
+ext.firebaseCredentialsKey = rootProject.file('config/firebase/firebaseCredentialsKey.json')
+ext.firebaseGroupsFile = rootProject.file('config/firebase/firebaseGroups.txt')
+ext.firebaseReleaseNotes = rootProject.file('config/firebase/firebaseReleaseNotes.txt')
+
+
+task setFirebaseDeployGroup {
+	doLast {
+		def group = findProperty('group')
+		if (firebaseGroupsFile.canRead()) {
+
+			firebaseGroupsFile.withWriter { w ->
+				w << group
+			}
+		} else {
+			throw new FileNotFoundException("Could not find firebaseGroups.txt")
+		}
+	}
+}
+
+task setFirebaseReleaseNotes {
+	doLast {
+		def notes = findProperty('notes')
+		if (firebaseReleaseNotes.canRead()) {
+
+			firebaseReleaseNotes.withWriter { w ->
+				w << notes
+			}
+		} else {
+			throw new FileNotFoundException("Could not find firebaseReleaseNotes.txt")
+		}
+	}
+}
+
+
+task deployAppToFirebase() {
+	dependsOn 'assembleRelease'
+	finalizedBy 'appDistributionUploadRelease'
+}
+
+
+

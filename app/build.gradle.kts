@@ -1,4 +1,5 @@
 import de.mannodermaus.gradle.plugins.junit5.junitPlatform
+import signing.getConfiguration
 
 buildscript {
     repositories {
@@ -17,6 +18,8 @@ plugins {
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("de.mannodermaus.android-junit5")
+    id("com.google.firebase.crashlytics")
+    id("com.google.gms.google-services")
 
 }
 
@@ -38,6 +41,26 @@ android {
 
     compileSdkVersion(Config.Android.compileSdkVersion)
 
+    signingConfigs {
+        val config = rootProject.getConfiguration()
+        val debugSign = config.debugSign
+        val releaseSign = config.releaseSign
+        named("debug").configure {
+            storeFile = debugSign.storeFile
+            storePassword = debugSign.storePassword
+            keyAlias = debugSign.keyAlias
+            keyPassword = debugSign.keyPassword
+        }
+        create("release") {
+            storeFile = releaseSign.storeFile
+            storePassword = releaseSign.storePassword
+            keyAlias = releaseSign.keyAlias
+            keyPassword = releaseSign.keyPassword
+        }
+
+    }
+
+
     defaultConfig {
         minSdkVersion(Config.Android.minSdkVersion)
         targetSdkVersion(Config.Android.targetVersion)
@@ -49,8 +72,8 @@ android {
 
         applicationId = Config.Android.applicationId
         Config.Android.versioning(rootProject).run {
-            versionCode = 1
-            versionName = "1"
+            versionCode = appVersionCode
+            versionName = appVersionName
         }
     }
 
@@ -62,6 +85,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            manifestPlaceholders = mapOf(
+                "crashlyticsCollectionEnabled" to "false"
+            )
+            extra.set("enableCrashlytics", false)
             signingConfig = signingConfigs.getByName("debug")
         }
 
@@ -74,7 +101,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-//            signingConfig = signingConfigs.getByName("release")
+            manifestPlaceholders = mapOf(
+                "crashlyticsCollectionEnabled" to "true"
+            )
+
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
@@ -108,9 +139,12 @@ dependencies {
     //log
     implementation(Libs.timberkt)
 
-    implementation (Libs.lottie)
+    implementation(Libs.lottie)
+    // Add the Firebase Crashlytics dependency.
+    implementation("com.google.firebase:firebase-crashlytics:17.0.0-beta01")
+    implementation("com.google.firebase:firebase-analytics:17.2.2")
 
-    implementation ("com.github.pwittchen:reactivenetwork-rx2:3.0.6")
+    implementation(Libs.reactivenetwork_rx2)
     //Android libs
     implementation(Libs.constraintlayout)
     implementation(Libs.recyclerview)

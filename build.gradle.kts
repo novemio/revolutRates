@@ -10,7 +10,8 @@ buildscript {
         classpath(Libs.com_android_tools_build_gradle)
         classpath(Libs.kotlin_gradle_plugin)
         classpath(Libs.android_junit5)
-        classpath("com.google.gms:google-services:4.3.0")
+        classpath("com.google.gms:google-services:4.3.3")
+        classpath ("com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta02")
         classpath(Libs.navigation_safe_args_gradle_plugin)
     }
 }
@@ -23,6 +24,7 @@ repositories {
 plugins {
     id("de.fayard.buildSrcVersions") version Versions.de_fayard_buildsrcversions_gradle_plugin
     id("io.gitlab.arturbosch.detekt") version "1.0.0-RC15"
+
 }
 
 

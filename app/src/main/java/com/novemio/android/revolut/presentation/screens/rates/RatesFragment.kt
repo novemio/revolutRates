@@ -1,8 +1,11 @@
 package com.novemio.android.revolut.presentation.screens.rates
 
 import android.os.Bundle
+import com.google.android.gms.common.util.CrashUtils
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.novem.lib.core.presentation.viewmodel.ifOnChildRenderState
 import com.novem.lib.core.utils.observeBy
+import com.novemio.android.revolut.BuildConfig
 import com.novemio.android.revolut.R
 import com.novemio.android.revolut.databinding.FragmentRatesBinding
 import com.novemio.android.revolut.domain.currency.model.Rate
